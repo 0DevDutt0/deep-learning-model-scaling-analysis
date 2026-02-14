@@ -537,10 +537,9 @@ export DML_RANDOM_SEED=42
 
 ### Project Maintainer
 
-**DevDutt Sharma**  
+**Devdutt S**  
 📧 [Contact via GitHub](https://github.com/0DevDutt0)  
 💼 [LinkedIn](https://www.linkedin.com/in/devdutts/)  
-🐦 [Twitter](https://twitter.com/devdutts)  
 
 ### Getting Help
 
