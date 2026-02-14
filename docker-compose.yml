@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  dml-scale:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: deep-learning-model-scaling-analysis:latest
+    container_name: deep-learning-model-scaling-analysis
+    volumes:
+      - ./data:/app/data
+      - ./outputs:/app/outputs
+    environment:
+      - DML_DATA_DIR=/app/data
+      - DML_OUTPUT_DIR=/app/outputs
+      - DML_LOG_LEVEL=INFO
+    command: ["--help"]
+
+  # Development service with mounted source code
+  dml-scale-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: builder
+    image: deep-learning-model-scaling-analysis:dev
+    container_name: deep-learning-model-scaling-analysis-dev
+    volumes:
+      - .:/app
+      - ./data:/app/data
+      - ./outputs:/app/outputs
+    environment:
+      - DML_DATA_DIR=/app/data
+      - DML_OUTPUT_DIR=/app/outputs
+      - DML_LOG_LEVEL=DEBUG
+    working_dir: /app
+    command: ["bash"]
+    stdin_open: true
+    tty: true

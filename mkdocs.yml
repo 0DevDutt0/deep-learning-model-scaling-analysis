@@ -1,0 +1,78 @@
+site_name: Deep Learning Model Scaling Analysis
+site_description: Causal inference analysis of neural network scaling laws using Double Machine Learning
+site_author: Deep Learning Model Scaling Analysis Contributors
+repo_url: https://github.com/0DevDutt0/deep-learning-model-scaling-analysis
+repo_name: deep-learning-model-scaling-analysis
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tabs.link
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [src]
+          options:
+            docstring_style: google
+            show_source: true
+            show_root_heading: true
+            show_root_toc_entry: true
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Getting Started:
+      - Installation: installation.md
+      - Quick Start: getting-started.md
+  - User Guide:
+      - Usage: usage.md
+      - Configuration: configuration.md
+  - Tutorials:
+      - Basic Tutorial: tutorials/basic.md
+      - Advanced Usage: tutorials/advanced.md
+  - API Reference:
+      - Models: api/models.md
+      - Experiments: api/experiments.md
+      - Analysis: api/analysis.md
+      - Configuration: api/config.md
+  - Development:
+      - Contributing: contributing.md
+      - Changelog: changelog.md
